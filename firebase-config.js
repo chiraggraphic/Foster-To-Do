@@ -1,12 +1,11 @@
-// Paste your Firebase web app config here (Firebase console > Project settings > Your apps > Web app).
-// These values are safe to publish; your data is protected by firestore.rules.
+// Firebase web app config (safe to publish; your data is protected by firestore.rules).
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBn2Nn1koZaRiUFYmk55T4J_-d2gTkmHmM",
+  authDomain: "foster-to-do.firebaseapp.com",
+  projectId: "foster-to-do",
+  storageBucket: "foster-to-do.firebasestorage.app",
+  messagingSenderId: "875724751241",
+  appId: "1:875724751241:web:00628d0b9efbb667b7a158"
 };
 
 // Email ID of the owner (boss/admin). Must match the email written in firestore.rules.
