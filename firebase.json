@@ -1,4 +1,9 @@
-{
-  "firestore": {"rules": "firestore.rules"},
-  "functions": [{"source": "functions", "codebase": "default"}]
-}
+export const firebaseConfig = {
+  apiKey: "AIzaSyBn2Nn1koZaRiUFYmk55T4J_-d2gTkmHmM",
+  authDomain: "foster-to-do.firebaseapp.com",
+  projectId: "foster-to-do",
+  storageBucket: "foster-to-do.firebasestorage.app",
+  messagingSenderId: "875724751241",
+  appId: "1:875724751241:web:00628d0b9efbb667b7a158"
+};
+export const ownerEmail = "graphicdesigner19870@gmail.com";
