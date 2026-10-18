@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // CHANGE this to the owner's Gmail (lowercase). Same value as ownerEmail in firebase-config.js
+    function signedInWithGoogle() {
+      return request.auth != null
+        && request.auth.token.firebase.sign_in_provider == 'google.com'
+        && request.auth.token.email_verified == true;
+    }
+    function isOwner() {
+      return signedInWithGoogle() && request.auth.token.email.lower() == 'graphicdesigner19870@gmail.com';
+    }
+    // Members = Google emails the owner gave permission to in the Team page
+    function isMember() {
+      return signedInWithGoogle() &&
+        exists(/databases/$(database)/documents/team/$(request.auth.token.email.lower()));
+    }
+    match /tasks/{id}    { allow read, write: if isOwner() || isMember(); }
+    match /clients/{id}  { allow read, write: if isOwner() || isMember(); }
+    match /settings/{id} { allow read: if isOwner() || isMember(); allow write: if isOwner(); }
+    // Members may read their own entry (needed for the permission check); only the owner can add/remove
+    match /team/{id}     { allow read: if isOwner() || isMember() || (signedInWithGoogle() && id == request.auth.token.email.lower()); allow write: if isOwner(); }
+  }
+}

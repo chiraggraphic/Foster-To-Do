@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Foster Tasks</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Pacifico&display=swap">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<aside><div class="logo">Foster<small>Creative Agency · Tasks</small></div>
+<button class="nv on" data-v="dash">▦ Dashboard</button><button class="nv" data-v="list">☰ All Tasks <span class="n" id="nAll"></span></button><button class="nv" data-v="board">▥ Board</button><button class="nv" data-v="clients">🏢 Clients</button><button class="nv" data-v="team">👥 Team</button><button class="nv" data-v="followups">🔔 Follow-ups</button><button class="nv" data-v="reports">📊 Reports</button>
+<div class="sec">CLIENTS <button id="addP" title="New client">+</button></div><div id="projs"></div>
+<div class="me"><div class="av" id="av">?</div><div><b id="nm"></b><span id="em" style="color:#8892a8"></span></div><button class="btn g" id="out" hidden style="margin-left:auto;padding:4px 10px">Sign out</button></div></aside>
+<main><div id="note"></div>
+<div class="top"><h1 id="ttl">Dashboard</h1><select id="fa"><option value="">All members</option></select><input id="q" placeholder="Search tasks, clients, people…"><button class="btn" id="add">+ New Task</button></div>
+<div id="view"></div></main>
+<div class="mo" id="mo" hidden><div class="md" id="md"></div></div>
+<div class="lg" id="login" hidden><div class="lb"><div class="logo">Foster<small>Creative Agency · Tasks</small></div><p class="sub">Private workspace. Sign in with your Google email and password. Only the owner and people the owner has permitted can enter.</p><button class="btn" id="gs" type="button">Sign in with Google</button><div class="er" id="ler"></div></div></div>
+<script type="module" src="app.js"></script>
+</body></html>
